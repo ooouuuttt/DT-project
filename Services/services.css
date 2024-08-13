@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.contentpadding {
+    padding: 20px;
+}
+
+.container-scroll {
+    overflow-x: auto;
+}
+
+/* Table Styles */
+.styled_table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-right: 2px solid #00bcd4; /* Column border */
+}
+
+th {
+    background-color: #ff5722; /* Vibrant orange */
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid #ff5722; /* Row border */
+}
+
+td {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0; /* Row border */
+}
+
+tr:nth-child(even) td {
+    background-color: #f0f0f0; /* Light gray for even rows */
+}
+
+tr:hover td {
+    background-color: #ffffff; /* No change on hover */
+}
+
+/* Headings and Text */
+h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #d32f2f; /* Vibrant red */
+}
+
+p {
+    margin: 0;
+}
+
+strong {
+    font-weight: bold;
+    color: #c2185b; /* Vibrant pink */
+}
+
+/* Lists */
+ul.list1 {
+    list-style-type: disc;
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+ul.list1 li {
+    margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .styled_table {
+        width: 100%;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    th, td {
+        display: block;
+        text-align: right;
+        border-right: none;
+    }
+    
+    th {
+        text-align: center;
+    }
+    
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        text-align: left;
+    }
+}

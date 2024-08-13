@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitals Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hospitals Information</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#hospitals">Hospitals</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><button class="btnLogin-popup">Login</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="loginEmail" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="loginPassword" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form id="registerForm">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" id="registerUsername" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="registerEmail" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="registerPassword" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account?<a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to Pune Hospitals Information</h2>
+            <p>Your one-stop portal for information about all hospitals in Pune.</p>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search for a hospital...">
+                <button onclick="searchHospital()">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="hospitals">
+        <div class="container">
+            <h2>Hospitals</h2>
+            <div class="hospital-list">
+                <div class="hospital">
+                    <h3>Deenanath Mangeshkar Hospital</h3>
+                    <p>Address: Erandwane, Pune</p>
+                    <p>Services: Cardiology, Neurology, Orthopedics, etc.</p>
+                    <p>Website: <span id="website"><a href="https://www.dmhospital.org">www.dmhospital.org</a></span></p>
+                    <button id="toggle-more-info" onclick="showMoreInfo('deenanath')">More Info</button>
+                    <div id="deenanath" class="more-info">
+                        <h4>Specialties</h4>
+                        <p>Here are some services  <button onclick="showMoreInfo('Services')"><a href="file:///C:/Users/DELL/Desktop/Murtaza/site/Services/services.html">Services</a></button></p>
+                        <h4>Doctor Info</h4>
+                        <button onclick="showMoreInfo('Doctor-info')"><a href="file:///C:/Users/DELL/Desktop/Murtaza/site/deenanath.html">More Info</a></button>
+                        <h4>Patient Guide</h4>
+                        <label id="pr" class="ir">Pricing: </label>
+                        <select id="cost" onchange="navigateToPage()">
+                            <option value="">Select</option>
+                            <option value="file:///C:/Users/DELL/Desktop/Murtaza/site/Pricing/price.html">Visiting Charges</option>
+                            <option value="file:///C:/Users/DELL/Desktop/Murtaza/site/Pricing/room.html">Room Charges</option>
+                            <option value="file:///C:/Users/DELL/Desktop/Murtaza/site/Pricing/health.html">Health Packages</option>
+                        </select>
+
+                        <h4>For Online Booking</h4>
+                        <p>Booking: <a href="https://www.dmhospital.org/out-patient-department">e-booking</a></p>
+                    </div>
+                </div>
+                <div class="hospital">
+                    <h3>Ruby Hall Clinic</h3>
+                    <p>Address: Sassoon Road, Pune</p>
+                    <p>Services: Cardiology, Oncology, Urology, etc.</p>
+                    <p>Website: <span id="website"><a href="https://rubyhall.com/">www.rubyhallclinic.org</a></span></p>
+                    <button onclick="showMoreInfo('ruby')">More Info</button>
+                    <div id="ruby" class="more-info">
+                        <h4>Specialties</h4>
+                        <p>Cardiology, Oncology, Urology, Gastroenterology, etc.</p>
+                        <h4>Doctor Info</h4>
+                        <button onclick="showMoreInfo('Doctor-info')"><a href="file:///C:/Users/DELL/Desktop/Murtaza/site/ruby.html">More Info</a></button>
+                        <h4>Treatment Costs</h4>
+                        <p>Chemotherapy: ₹1,00,000, Prostate Surgery: ₹1,75,000</p>
+                        <h4>For Online Booking</h4>
+                        <p>Booking: <a href="https://rubyhall.com/contact-us">e-booking</a></p>
+                    </div>
+                </div>
+                <div class="hospital">
+                    <h3>Jehangir Hospital</h3>
+                    <p>Address: 32, Sassoon Road, Pune - 411001, India</p>
+                    <p>Services: Cardiology, Oncology, Urology, etc.</p>
+                    <p>Website: <span id="website"><a href="https://www.jehangirhospital.com/">www.jehangirhospital.org</a></span></p>
+                    <button onclick="showMoreInfo('jehangir')">More Info</button>
+                    <div id="jehangir" class="more-info">
+                        <h4>Specialties</h4>
+                        <p>Cardiology, Oncology, Urology, Gastroenterology, etc.</p>
+                        <h4>Doctor Info</h4>
+                        <button onclick="showMoreInfo('Doctor-info')"><a href="file:///C:/Users/DELL/Desktop/Murtaza/site/jehangir.html">More Info</a></button>
+                        <h4>Treatment Costs</h4>
+                        <p>Chemotherapy: ₹1,00,000, Prostate Surgery: ₹1,75,000</p>
+                        <h4>For Online Booking</h4>
+                        <p>Booking: <a href="https://www.jehangirhospital.com/login-register">e-booking</a></p>
+                    </div>
+                </div>
+                <div class="hospital">
+                    <h3>Sahyadri Hospital</h3>
+                    <p>Address:  Plot No. 30-C, Karve Rd, Kachare Colony, Deccan Gymkhana, Pune, Maharashtra 411004</p>
+                    <p>Services: Cardiology, Oncology, Urology, etc.</p>
+                    <p>Website: <span id="website"><a href="https://sahyadrihospital.com/deccan/">www.sahyadrihospital.org</a></span></p>
+                    <button onclick="showMoreInfo('sahyadri')">More Info</button>
+                    <div id="sahyadri" class="more-info">
+                        <h4>Specialties</h4>
+                        <p>Cardiology, Oncology, Urology, Gastroenterology, etc.</p>
+                        <h4>Doctor Info</h4>
+                        <ul>
+                            <li>Name: Dr. Rajesh Mehta, Experience: 20 years, Education: MBBS, DM, Specialty: Oncology, Success Rate: 85%</li>
+                            <li>Name: Dr. Anjali Deshpande, Experience: 12 years, Education: MBBS, MS, Specialty: Urology, Success Rate: 88%</li>
+                        </ul>
+                        <h4>Treatment Costs</h4>
+                        <p>Chemotherapy: ₹1,00,000, Prostate Surgery: ₹1,75,000</p>
+                        <h4>For Online Booking</h4>
+                        <p>Booking: <a href="https://sahyadrihospital.com/find-a-doctor/">e-booking</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <p>Find the best medical services in Pune. From emergency care to specialized treatments, we have got you covered.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hospitals Information. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function navigateToPage() {
+            const selectedValue = document.getElementById('cost').value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+        var toggleButton = document.getElementById('toggle-more-info');
+        var moreInfo = document.querySelector('.more-info');
+    
+        toggleButton.addEventListener('click', function () {
+            moreInfo.classList.toggle('active');
+        });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

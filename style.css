@@ -1,0 +1,511 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ADEBFF;
+    line-height: 1.6; /* Improved readability */
+}
+
+header {
+    background: linear-gradient(135deg, #003459, #007bff);
+    color: white;
+    padding: 10px 0;
+    text-align: center; /* Centered header text */
+    border-bottom: 2px solid #00171F; /* Add a bottom border to the header */
+}
+
+.search-container {
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+    padding: 10px; /* Added padding */
+}
+
+#search-bar {
+    width: 300px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #00171F;
+    border-radius: 5px 0 0 5px;
+    transition: border-color 0.3s ease;
+}
+
+#search-bar:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0; /* Added padding */
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+    font-size: 2.2em; /* Increased font size */
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex; /* Flexbox for alignment */
+    gap: 20px; /* Space between menu items */
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+    position: relative;
+    
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+    font-weight: bold; /* Added bold text */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 3px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s ease;
+}
+
+nav ul li a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ADEBFF;
+}
+
+section .container {
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for better visual effect */
+}
+
+.hospital-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between hospital items */
+}
+
+.hospital {
+    flex: 1 1 45%;
+    margin: 10px;
+    padding: 20px;
+    background-color: #ADEBFF;
+    border: 1px solid #00171F;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease-in-out; /* Added hover effect transition */
+}
+
+.hospital:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #BEE2FF;
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.hospital h3 {
+    margin-top: 0;
+    color: #003459;
+    transition: color 0.3s ease;
+    font-size: 1.5em; /* Increased font size */
+}
+
+.hospital:hover h3 {
+    color: #007bff;
+}
+
+button {
+    background-color: #003459;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+}
+
+button:hover {
+    background-color: #00171F;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #003459;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px; /* Added margin-top */
+    font-size: 0.9em; /* Slightly reduced font size */
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    color: #333333;
+    font-weight: bold; /* Bold text for form labels */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #00171F;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #333333;
+    transition: font-size 0.3s ease;
+    transition: border-color 0.3s ease-in-out; /* Smooth transition for border color */
+}
+
+form input:focus, form textarea:focus {
+    font-size: 1.1em;
+    border-color: #007bff; /* Change border color on focus */
+    outline: none;
+}
+
+form button {
+    margin-top: 10px;
+    background-color: #003459;
+    color: white;
+    font-size: 1.1em; /* Slightly increased font size */
+}
+
+/* Default state for more-info */
+.more-info {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ADEBFF; /* Light blue background when not active */
+    border: 1px solid #00171F;
+    border-radius: 8px;
+    color: #333333; /* Dark text color for list items when not active */
+    transition: background-color 0.3s ease, color 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Active state for more-info */
+.more-info.active {
+    background: linear-gradient(135deg, #003459, #00FFFF);
+    color: #00FFFF; /* Light cyan text color */
+}
+
+.more-info h4 {
+    margin-bottom: 5px;
+    color: inherit; /* Inherits color from more-info */
+}
+
+.more-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.more-info ul li {
+    margin-bottom: 5px;
+    color: inherit; /* Inherits color from more-info */
+}
+.more-info.active h4 {
+    color: inherit; /* Inherits color from more-info */
+}
+
+/* Navigation button style */
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: white;
+    color: #003459;
+}
+
+.wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0) translate(-50%, -50%);
+    transition: transform 0.5s ease, height 0.2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1) translate(-50%, -50%);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.wrapper .form-box.login {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #00171F;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #003459;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #003459;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #333333;
+    font-weight: 500;
+    pointer-events: none;
+    transition: top 0.3s ease, font-size 0.3s ease;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+    font-size: 0.8em;
+    color: #007bff; /* Added color change on focus */
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #003459;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #003459;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: 0.9em;
+    color: #333333;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+}
+
+.remember-forgot label input {
+    accent-color: #003459;
+    margin-right: 5px; 
+}
+
+.remember-forgot a {
+    color: #003459;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #003459;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-size: 500;
+}
+
+.login-register {
+    font-size: .9em;
+    color: #333333;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: #003459;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the label with id "pr" and class "ir" */
+#pr {
+    font-size: 1.2em; /* Larger font size for better readability */
+    font-weight: bold; /* Bold text for emphasis */
+    margin-right: 10px; /* Space between label and select box */
+    color: #333333; /* Dark color for better contrast */
+}
+
+/* Style for the select box */
+#cost {
+    font-size: 1em; /* Font size for the select options */
+    padding: 8px; /* Padding inside the select box */
+    border: 1px solid #00171F; /* Dark border color */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #FFFFFF; /* White background color */
+    color: #003459; /* Dark color for the selected option */
+    transition: border-color 0.3s ease;
+}
+
+/* Style for the select box on hover */
+#cost:hover {
+    border-color: #007bff; /* Change border color on hover */
+}
+
+/* Style for the select box when focused */
+#cost:focus {
+    outline: none; /* Remove default outline */
+    border-color: #007bff; /* Change border color on focus */
+}
+
+.topsidebar ul li a {
+    display: inline-block;
+    color: #ffffff;
+    height: 11px;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 8px 10px;
+    margin: 5px;
+    border: none;
+    background: #00171F;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.topsidebar ul li a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.box a {
+    text-decoration: none;
+    color: #003459;
+    transition: color 0.3s ease;
+}
+
+a {
+    outline: none;
+}
+
+a {
+    color: #15bba4;
+    text-decoration: none;
+    outline: none;
+}

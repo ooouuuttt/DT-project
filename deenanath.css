@@ -1,0 +1,218 @@
+.doctor_detail_box {
+    height: auto;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doctor_detail_box .photo_box {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    border: 2px solid #15bba4;
+    padding: 3px;
+    float: left;
+    list-style: none;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.doctor_detail_box .photo_box img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.doctor_detail_box .detail {
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #333;
+    font-family: 'Oswald', sans-serif;
+}
+
+.doctor_detail_box .qualification,
+.doctor_detail_box .specilaties {
+    margin-left: 0;
+    margin-bottom: 8px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.read_more {
+    background: none;
+    transition: color 0.25s ease-in-out;
+    color: #15bba4;
+    font-size: 13px;
+    font-weight: normal;
+    border: none;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.read_more:hover {
+    color: #0d8b78;
+}
+
+a {
+    color: #15bba4;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0d8b78;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .row-fluid .span6,
+    .row-fluid .span12 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .row-fluid [class*="span"] {
+        display: block;
+        width: 100%;
+        min-height: 30px;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+}
+
+.row-fluid .span6 {
+    width: 49%;
+}
+
+.row-fluid .span12 {
+    width: 100%;
+}
+
+[class*="span"] {
+    float: left;
+    min-height: 1px;
+    margin-left: 2%;
+    box-sizing: border-box;
+}
+
+.grid_list_item {
+    background: url(../img/dotted-line.png) repeat-x bottom left;
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.consultant_form {
+    background-color: #f1f1f1;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.consultant_form {
+    background-color: #f7f7f7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.consultant_form .drfilter {
+    flex: 1 1 auto;
+    line-height: 1.2;
+    font-size: 18px;
+    text-align: left;
+    background: #ffffff;
+    padding: 2px 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+    max-width: 36%;
+}
+
+.consultant_form .drfilter:hover {
+    background-color: #f0f0f0;
+}
+
+.consultant_form label {
+    margin-right: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+}
+
+.consultant_form select,
+.consultant_form input[type="text"] {
+    width: 100%;
+    padding: 2px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.consultant_form select:focus,
+.consultant_form input[type="text"]:focus {
+    border-color: #15bba4;
+}
+
+.consultant_form select {
+    background-color: #fff;
+}
+
+.consultant_form .search-button {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 3px;
+    border: 1px solid #15bba4;
+    background-color: #15bba4;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.consultant_form .search-button:hover {
+    background-color: #0d8b78;
+}
+
+button, input, select, textarea {
+    font-family: 'Arial', sans-serif;
+}
+
+label, select, button, input[type="button"], input[type="reset"], input[type="submit"], input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
